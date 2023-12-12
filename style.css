@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
 }
+
 section{
   position: relative;
   width: 100%;
@@ -9,6 +10,7 @@ section{
   background: #3586ff;
   overflow: hidden;
 }
+
 section .air{
   position: absolute;
   bottom: 0;
@@ -16,8 +18,9 @@ section .air{
   width: 100%;
   height: 100px;
   background: url(https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png);
-  background-size: 1000px 100px
+  background-size: 1000px 100px;
 }
+
 section .air.air1{
   animation: wave 30s linear infinite;
   z-index: 1000;
@@ -25,6 +28,7 @@ section .air.air1{
   animation-delay: 0s;
   bottom: 0;
 }
+
 section .air.air2{
   animation: wave2 15s linear infinite;
   z-index: 999;
@@ -32,6 +36,7 @@ section .air.air2{
   animation-delay: -5s;
   bottom: 10px;
 }
+
 section .air.air3{
   animation: wave 30s linear infinite;
   z-index: 998;
@@ -39,6 +44,7 @@ section .air.air3{
   animation-delay: -2s;
   bottom: 15px;
 }
+
 section .air.air4{
   animation: wave2 5s linear infinite;
   z-index: 997;
@@ -46,6 +52,7 @@ section .air.air4{
   animation-delay: -5s;
   bottom: 20px;
 }
+
 @keyframes wave{
   0%{
     background-position-x: 0px; 
@@ -54,6 +61,7 @@ section .air.air4{
     background-position-x: 1000px; 
   }
 }
+
 @keyframes wave2{
   0%{
     background-position-x: 0px; 
