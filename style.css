@@ -1,19 +1,51 @@
-body { 
+body {
   background: black;
-
-
 }
-html { 
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #000000;
+  height: 80px;
+  font-size: 20px;
+}
+
+nav a {
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  color: #ffffff;
+  text-decoration: none;
+  margin: 30px;
+  font-size: 20px;
+  font-family: 'Nemoy';
+}
+
+nav a::after {
+  content: '';
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: #ffffff;
+  transition: 0.4s;
+}
+
+
+html {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  
 }
+
 .background {
   overflow: hidden;
   position: relative;
-  background: black; 
+  background: black;
   z-index: -1;
   width: 200px;
   height: 200px;
@@ -28,8 +60,6 @@ html {
   z-index: -1;
 }
 
-
-
 @keyframes rotate {
   0% {
     transform: translate(-50%, -50%) rotate(0deg);
@@ -40,87 +70,89 @@ html {
 }
 
 button {
-    z-index: 1;
+  z-index: 1;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  transition: box-shadow 0.5s;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: Consolas;
+  width: 10em;
+  position: relative;
+  height: 3.5em;
+  border: 3px ridge #ffffff;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  transition: 1s;
+  border-radius: 0.3em;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 15em;
+  height: 4em;
+}
 
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: Consolas;
-    width: 10em;
-    position: relative;
-    height: 3.5em;
-    border: 3px ridge #149CEA;
-    outline: none;
-    background-color: transparent;
-    color: white;
-    transition: 1s;
-    border-radius: 0.3em;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    width: 15em;
-    height: 4em;
-    
-    
-  }
-  
-  button::after {
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: 3%;
-    width: 95%;
-    height: 40%;
-    background-color: #000000;
-    transition: 0.5s;
-    transform-origin: center;
-  }
-  
-  button::before {
-    content: "";
-    transform-origin: center;
-    position: absolute;
-    top: 80%;
-    left: 3%;
-    width: 95%;
-    height: 40%;
-    background-color: #000000;
-    transition: 0.5s;
-  }
-  
-  button:hover::before, button:hover::after {
-    transform: scale(0)
-  }
-  
-  button:hover {
-    box-shadow: inset 0px 0px 25px #1479EA;
-  }
+button::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 3%;
+  width: 95%;
+  height: 40%;
+  background-color: #000000;
+  transition: 0.5s;
+  transform-origin: center;
+}
 
+button::before {
+  content: "";
+  transform-origin: center;
+  position: absolute;
+  top: 80%;
+  left: 3%;
+  width: 95%;
+  height: 40%;
+  background-color: #000000;
+  transition: 0.5s;
+}
 
+button:hover::before,
+button:hover::after {
+  transform: scale(0);
+}
 
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-  }
-  
-  @keyframes blink-caret {
-    50% {
-      border-color: transparent;
-    }
-  }
-  /* When you change the amount of characters in the h1, you have to change 
-  the with: 14ch and  steps(14, end), if there is 14 characters, put 14, 
-  if there is 20 put 20 */
-  .animation {
-    word-wrap: break-word;
-    color : white;
-    font: bold 200% Consolas, Monaco, monospace, white;
-    border-right: .1em solid white;
-    width: 40.40ch;
-    margin: 2em 2em;
-    white-space: nowrap;
-    overflow: hidden;
-    -webkit-animation: typing 5s steps(40, end),
-                 blink-caret .5s step-end infinite alternate;
-  }
+button:hover {
+  box-shadow: inset 0px 0px 25px #ffffff;
+}
 
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.animation {
+  word-wrap: break-word;
+  color: white;
+  font: bold 200% Consolas, Monaco, monospace, white;
+  border-right: 0.1em solid white;
+  width: 40.40ch;
+  margin: 2em 2em;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-animation: typing 5s steps(40, end), blink-caret 0.5s step-end infinite alternate;
+}
+
+nav a img {
+  transition: transform 0.3s ease;
+}
+
+nav a img:hover {
+  transform: scale(3);
+}
