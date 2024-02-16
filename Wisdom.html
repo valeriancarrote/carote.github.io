@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>projet</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/nemoy" type="text/css"/><body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script></head>
+<body>
+  
+    <div class="background">
+  </div>
+  <nav>
+    <a href="fun.html"><img src="amitie.png" width="145"></a>
+    <a href="Wisdom.html"><img src="saggese.png" width="145"></a>
+    <a href="Quotes.html"><img src="populaire.png" width="145"></a>
+    <a href="True.html"><img src="inspiration.png" width="145"></a>
+    <div class="underline"></div>
+
+</nav>
+  <button onclick="getJoke()">Generate Quotes</button>
+  <div class="animation" id="joke"></div>
+  <div id="canvas-container"></div>
+
+
+
+  <script>
+    function getJoke() {
+      document.getElementById("joke").innerHTML = "";
+      const jokeElement = document.getElementById("joke");
+      jokeElement.classList.remove("animation");
+      void jokeElement.offsetWidth; // Trigger reflow
+      jokeElement.classList.add("animation");
+      // Make API request
+      const randomNumber = Math.floor(Math.random() * 5) + 1;
+      fetch("https://api.quotable.io/quotes/random?maxLength=40&tags=Wisdom")
+        .then(response => response.json())
+        .then(data => {
+          const quote = data[0];
+          console.log(quote.q);
+          // Insert joke setup into DOM
+          document.getElementById("joke").innerHTML = `<p>${quote.content}</p>`;
+        });
+    }
+
+
+
+
+
+
+        // Get all the image elements
+const images = document.querySelectorAll("nav a img");
+
+// Add event listeners to each image
+images.forEach((image) => {
+  image.addEventListener("mouseover", () => {
+    image.style.transform = "scale(2.2)";
+  });
+
+  image.addEventListener("mouseout", () => {
+    image.style.transform = "scale(1)";
+  });
+});
+  </script>
+
+
+</body>
+</html>
